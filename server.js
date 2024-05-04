@@ -105,7 +105,7 @@ app.get('/sephora/:slug', (req, res, next) => {
             console.log(`Served shein Trojan (maxconvtest)(${slug})`);
 });
 
-// Middleware to pass on my slug values (SHEIN US CAMP)
+// Middleware to pass on my slug values (AmazonUS CAMP)
 app.get('/amazon/:slug', (req, res, next) => {
     const { slug } = req.params;
     const destinationLander = `PUT AMAZON LINK HERE`;
